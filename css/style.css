@@ -332,7 +332,7 @@
 .content h2,
 .content .h2 {
   position: relative;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: none;
   letter-spacing: normal;
@@ -342,17 +342,16 @@
   display: block;
 }
 .content h3 {
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #383838;
 }
 .content h4,
 .content h5,
 .content h6 {
-  font-size: 0.9rem;
-  font-weight: normal;
-  color: #8c8c8c;
-  border-bottom: 1px dashed #8c8c8c;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0f533c;
   display: inline;
   text-decoration: none;
 }
@@ -469,6 +468,9 @@ body {
   -webkit-hyphens: manual;
   hyphens: manual;
 }
+.content .highlight {
+  font-weight: 600;
+}
 .content .highlight a {
   color: #dccf8f;
 }
@@ -484,13 +486,13 @@ body {
   background-image: linear-gradient(transparent, transparent 5px, #383838 5px, #383838);
 }
 .content a:hover {
-  background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
+  background-image: linear-gradient(transparent 0% 10%, #3aedb0 0 40%);
 }
 .content a.icon {
   background: none;
 }
 .content a.icon:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 .content h1 a,
 .content .h1 a,
@@ -502,6 +504,7 @@ body {
   color: inherit;
   text-decoration: none;
   background: none;
+  text-underline-offset: 6px;
 }
 .content h1 a:hover,
 .content .h1 a:hover,
@@ -513,7 +516,8 @@ body {
   background-repeat: repeat-x;
   background-position: bottom;
   background-size: 100% 6px;
-  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 6px, #2bbc8a 6px, #2bbc8a);
+  text-underline-offset: 6px;
 }
 @media (min-width: 540px) {
   .image-wrap {
@@ -665,7 +669,7 @@ body {
   background: none;
 }
 #header-post a.icon:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #header-post ol {
   list-style-type: none;
@@ -782,7 +786,7 @@ body {
   max-height: calc(95vh - 7rem);
 }
 #header-post #toc a:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #header-post #toc .toc-level-1 > .toc-link {
   display: none;
@@ -873,7 +877,7 @@ body {
   background: none;
 }
 #footer-post a.icon:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #footer-post #nav-footer {
   margin-left: 1rem;
@@ -954,7 +958,7 @@ body {
   line-height: 30px;
 }
 #footer-post #toc-footer a:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #footer-post #toc-footer .toc-level-1 > .toc-link {
   display: none;
@@ -1067,7 +1071,7 @@ article .content h2:before {
   color: #2bbc8a;
   position: absolute;
   left: -1rem;
-  top: -4px;
+  top: 5%;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -1094,18 +1098,19 @@ article .content .video-container embed {
   margin-top: 0;
 }
 article .content blockquote {
-  background: inherit;
-  color: #ccffb6;
-  border-left: 0px solid #ccc;
+  background: #efefef;
+  color: #333;
+  border-left: 0px solid #000;
   margin: 1rem 10px;
   padding: 0.5em 10px;
+  border-radius: 6px;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 article .content blockquote p {
   margin: 0;
 }
 article .content blockquote:before {
-  color: #ccffb6;
+  color: #666;
   content: "\201C";
   font-size: 2em;
   line-height: 0.1em;
@@ -1218,6 +1223,7 @@ article .content .caption {
 }
 #footer li a {
   margin-right: 15px;
+  text-underline-offset: 6px;
 }
 #footer li:last-child {
   border-right: 0;
@@ -1311,8 +1317,8 @@ article .content .caption {
   text-align: justify;
 }
 #search-result em.search-keyword {
-  color: #d480aa;
-  border-bottom: 1px dashed #d480aa;
+  color: #2bbc8a;
+  border-bottom: 1px dashed #2bbc8a;
   font-weight: bold;
 }
 .search-no-result {
@@ -1321,58 +1327,49 @@ article .content .caption {
   color: #383838;
 }
 .highlight {
-  color: #dccf8f;
-  background: url("./pojoaque.jpg") repeat scroll left top #181914;
+  color: #eaeaea;
+  background: #000;
 }
 .highlight .code .comment,
 .highlight .code .quote {
-  color: #586e75;
-  font-style: italic;
-}
-.highlight .code .keyword,
-.highlight .code .selector-tag,
-.highlight .code .literal,
-.highlight .code .addition {
-  color: #b64926;
-}
-.highlight .code .number,
-.highlight .code .string,
-.highlight .code .doctag,
-.highlight .code .regexp {
-  color: #468966;
-}
-.highlight .code .title,
-.highlight .code .section,
-.highlight .code .built_in,
-.highlight .code .name {
-  color: #ffb03b;
+  color: #969896;
 }
 .highlight .code .variable,
 .highlight .code .template-variable,
-.highlight .code .class .title,
+.highlight .code .tag,
+.highlight .code .name,
+.highlight .code .selector-id,
+.highlight .code .selector-class,
+.highlight .code .regexp,
+.highlight .code .deletion {
+  color: #d54e53;
+}
+.highlight .code .number,
+.highlight .code .built_in,
+.highlight .code .builtin-name,
+.highlight .code .literal,
 .highlight .code .type,
-.highlight .code .tag {
-  color: #b58900;
+.highlight .code .params,
+.highlight .code .meta,
+.highlight .code .link {
+  color: #e78c45;
 }
 .highlight .code .attribute {
-  color: #b89859;
+  color: #e7c547;
 }
+.highlight .code .string,
 .highlight .code .symbol,
 .highlight .code .bullet,
-.highlight .code .link,
-.highlight .code .subst,
-.highlight .code .meta {
-  color: #cb4b16;
+.highlight .code .addition {
+  color: #b9ca4a;
 }
-.highlight .code .deletion {
-  color: #dc322f;
+.highlight .code .title,
+.highlight .code .section {
+  color: #7aa6da;
 }
-.highlight .code .selector-id,
-.highlight .code .selector-class {
-  color: #d3a60c;
-}
-.highlight .code .formula {
-  background: #073642;
+.highlight .code .keyword,
+.highlight .code .selector-tag {
+  color: #c397d8;
 }
 .highlight .code .emphasis {
   font-style: italic;
@@ -1383,7 +1380,7 @@ article .content .caption {
 pre {
   font-family: "Menlo", "Meslo LG", monospace;
   font-size: 13px;
-  padding: 0px 15px;
+  padding: 0px 6px;
   padding-bottom: 0;
   line-height: 22px;
   -webkit-border-radius: 4px;
@@ -1406,7 +1403,7 @@ pre code {
   font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  padding: 0px 15px;
+  padding: 0px 6px;
   overflow-x: auto;
   margin: 1rem 0 1rem 0;
 }
@@ -1435,6 +1432,7 @@ pre code {
   width: auto;
 }
 .highlight td.gutter {
+  opacity: 50%;
   text-align: right;
 }
 .highlight .line {
